@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #6482AD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container.register {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 450px;
+  text-align: center;
+}
+
+.form-title {
+  margin-bottom: 25px;
+  color: #555555;
+}
+
+.label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input,
+.birthdaySelector,
+.select-gender {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+.birthdaySelector:focus,
+.select-gender:focus {
+  outline: none;
+  border-color: #5563DE;
+  box-shadow: 0 0 4px rgba(85, 99, 222, 0.4);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+.birthdayBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.birthdaySelector {
+  width: 75px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.birthdaySelector:hover {
+  border-color: #888;
+}
+
+.register-form {
+  text-align: center;
+}
+
+
+button{
+    width:100px ;
+    height:60px ;
+    color:#000;
+
+}
+
+
+/* Container matches register page */
+.container.login {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 450px;
+  text-align: center;
+}
+
+/* Form title styling */
+.login-form .form-title {
+  margin-bottom: 25px;
+  color: #555555;
+}
+
+/* Input groups styling */
+.input-group {
+  margin-bottom: 15px;
+}
+
+/* Inputs, selects match register page */
+.input,
+.select-gender {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+.select-gender:focus {
+  outline: none;
+  border-color: #5563DE;
+  box-shadow: 0 0 4px rgba(85, 99, 222, 0.4);
+}
+
+/* Submit button styling */
+button.submit-button {
+  width: 100px;
+  height: 60px;
+  background-color: #5563DE;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.submit-button:hover {
+  background-color: #3f4cb1;
+}
+
+/* Text alignment */
+.login-form {
+  text-align: center;
+}
+
+
+p{
+  margin-top: 20px;
+   font-size: 14px;
+    color: #555;
+}

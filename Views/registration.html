@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Typing game</title>
+  </head>
+  <body>
+    <div class="container register" id="Register">
+      <form class="register-form" method="POST" action="/register">
+        <h1 class="form-title">Create your account</h1>
+        <label id="birthdayLabel" class="label">Birthday</label>
+        <div class="birthdayBox">
+          <select id="dayOfMonth" name="dayOfMonth" class="birthdaySelector select-day" required>
+            <option value="17">17</option>
+            <option value="3">3</option>
+            <option value="29">29</option>
+            <option value="11">11</option>
+            <option value="8">8</option>
+            <option value="26">26</option>
+            <option value="14">14</option>
+            <option value="2">2</option>
+            <option value="20">20</option>
+            <option value="31">31</option>
+            <option value="12">12</option>
+            <option value="5">5</option>
+            <option value="1">1</option>
+            <option value="23">23</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="27">27</option>
+            <option value="7">7</option>
+            <option value="24">24</option>
+            <option value="6">6</option>
+            <option value="19">19</option>
+            <option value="25">25</option>
+            <option value="28">28</option>
+            <option value="16">16</option>
+            <option value="13">13</option>
+            <option value="9">9</option>
+            <option value="4">4</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="18">18</option>
+            <option value="30">30</option>
+          </select>
+
+          <select id="firstPartMonth" name="firstPartMonth" class="birthdaySelector select-month1" required>
+            <option value="J">J</option>
+            <option value="Nov">Nov</option>
+            <option value="Dec">Dec</option>
+            <option value="Feb">Feb</option>
+            <option value="M">M</option>
+            <option value="Sept">Sept</option>
+            <option value="Oct">Oct</option>
+            <option value="Aug">Aug</option>
+            <option value="A">A</option>
+          </select>
+
+          <select id="secondPartMonth" name="secondPartMonth" class="birthdaySelector select-month2" required>
+            <option value="em">em</option>
+            <option value="ru">ru</option>
+            <option value="a">a</option>
+            <option value="r">r</option>
+            <option value="anu">anu</option>
+            <option value="p">p</option>
+            <option value="om">om</option>
+          </select>
+
+          <select id="thirdPartMonth" name="thirdPartMonth" class="birthdaySelector select-month3" required>
+            <option value="ber">ber</option>
+            <option value="rch">rch</option>
+            <option value="ly">ly</option>
+            <option value="ary">ary</option>
+            <option value="ne">ne</option>
+            <option value="st">st</option>
+            <option value="ril">ril</option>
+            <option value="y">y</option>
+          </select>
+
+          <select id="firstNumberDate" name="firstNumberDate" class="birthdaySelector select-year1" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="0">0</option>
+          </select>
+
+          <select id="secondNumberDate" name="secondNumberDate" class="birthdaySelector select-year2" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="0">0</option>
+          </select>
+
+          <select id="thirdNumberDate" name="thirdNumberDate" class="birthdaySelector select-year3" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="0">0</option>
+          </select>
+
+          <select id="fourthNumberDate" name="fourthNumberDate" class="birthdaySelector select-year4" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="0">0</option>
+          </select>
+        </div>
+        <div id="password" class="input-group password">
+          <label class="label">Password</label>
+          <input type="text" name="password" class="input" placeholder="Password" required>
+        </div>
+
+        <div id="username" class="input-group username">
+          <label class="label">Username</label>
+          <input type="password" name="username" class="input" placeholder="Username" required>
+        </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+        
+      </form>
+      <p >
+        Already have an account? 
+        <a href="/login" class="link">Login</a>
+      </p>
+      
+      
+    </div>
+  </body>
+</html>
