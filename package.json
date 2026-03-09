@@ -25,6 +25,8 @@
     "express-session": "^1.19.0",
     "node": "^20.19.6",
     "nodemon": "^3.1.11",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.0.2"
   }

@@ -23,8 +23,9 @@ const db = await open({
 await db.exec(`CREATE TABLE IF NOT EXISTS Users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT NOT NULL,
+  firstName TEXT,
+  lastName TEXT,
   password TEXT NOT NULL,
-  gender TEXT,
   dateOfBirth TEXT NOT NULL
 )`);
 
@@ -84,15 +85,17 @@ app.post("/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(user.password, 10);
 
     const result = await db.run(
-  `INSERT INTO Users
-   (username, password, dateOfBirth)
-   VALUES (?, ?, ?)`,
-    [
-      user.username,
-      hashedPassword,
-      user.dateOfBirth
-    ]
-  );
+      `INSERT INTO Users
+       (username, firstName, lastName, password, dateOfBirth)
+       VALUES (?, ?, ?, ?, ?)`,
+      [
+        user.username,
+        user.firstName,
+        user.lastName,
+        hashedPassword,
+        user.dateOfBirth
+      ]
+    );
 
     console.log("DB result:", result);
 
@@ -141,6 +144,30 @@ app.post("/login", async (req, res) => {
 
 app.get("/game", requireLogin, (req, res) => {
     res.sendFile(path.join(__dirname, "Views", "game.html"));
+});
+
+app.post("/submit", requireLogin, (req, res) => {
+    try {
+        const { userInput, originalText } = req.body;
+        const username = req.session.username;
+        
+        let mistakes = 0;
+        const maxLen = Math.max(originalText.length, userInput.length);
+        for (let i = 0; i < maxLen; i++) {
+            if ((userInput[i] || '') !== (originalText[i] || '')) {
+                mistakes++;
+            }
+        }
+        
+        const score = Math.max(0, 100 - mistakes * 5);
+        
+        console.log(`User ${username} completed typing game with score: ${score}%`);
+        
+        res.json({ score: score });
+    } catch (err) {
+        console.error("Submit error:", err);
+        res.status(500).json({ error: "Server error" });
+    }
 });
 
 app.listen(port, ()=>{
