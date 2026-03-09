@@ -2,17 +2,30 @@
   "name": "typing-game",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "homepage": "https://github.com/DaniTRFV/Typing-game#readme",
+  "bugs": {
+    "url": "https://github.com/DaniTRFV/Typing-game/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaniTRFV/Typing-game.git"
+  },
+  "license": "ISC",
+  "author": "Danail and Kiril",
   "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "better-sqlite3": "^12.5.0",
-    "express": "^5.1.0",
+    "connect-mongo": "^6.0.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
     "node": "^20.19.6",
     "nodemon": "^3.1.11",
     "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
-  },
-  "author": "Danail and Kiril",
-  "license": "ISC"
+    "sqlite3": "^5.0.2"
+  }
 }
