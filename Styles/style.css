@@ -1,19 +1,29 @@
+/* =========================================
+   1. GLOBAL RESET & BASE
+   ========================================= */
 * {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-
+/* Base font for forms */
 html, body {
   height: 100%;
-  margin: 0;
-  background-color: #6482AD;
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Default background (will be overridden in Game view) */
+  background-color: #6482AD; 
+  transition: background-color 0.3s ease;
 }
 
-.container.register {
+/* =========================================
+   2. FORM STYLES (Login & Registration)
+   ========================================= */
+.container.register,
+.container.login {
   background: #fff;
   padding: 40px 50px;
   border-radius: 12px;
@@ -58,6 +68,7 @@ html, body {
 .input-group {
   margin-bottom: 15px;
 }
+
 .birthdayBox {
   display: flex;
   flex-wrap: wrap;
@@ -70,72 +81,12 @@ html, body {
   width: 75px;
   padding: 8px;
   text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 13px;
 }
 
-.birthdaySelector:hover {
-  border-color: #888;
-}
-
-.register-form {
-  text-align: center;
-}
-
-
-button{
-    width:100px ;
-    height:60px ;
-    color:#000;
-
-}
-
-
-/* Container matches register page */
-.container.login {
-  background: #fff;
-  padding: 40px 50px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  width: 450px;
-  text-align: center;
-}
-
-/* Form title styling */
-.login-form .form-title {
-  margin-bottom: 25px;
-  color: #555555;
-}
-
-/* Input groups styling */
-.input-group {
-  margin-bottom: 15px;
-}
-
-/* Inputs, selects match register page */
-.input,
-.select-gender {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.input:focus,
-.select-gender:focus {
-  outline: none;
-  border-color: #5563DE;
-  box-shadow: 0 0 4px rgba(85, 99, 222, 0.4);
-}
-
-/* Submit button styling */
+/* Form Buttons */
 button.submit-button {
-  width: 100px;
-  height: 60px;
+  width: 120px;
+  height: 50px;
   background-color: #5563DE;
   border: none;
   color: #fff;
@@ -149,14 +100,74 @@ button.submit-button:hover {
   background-color: #3f4cb1;
 }
 
-/* Text alignment */
-.login-form {
-  text-align: center;
+p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
 }
 
+/* =========================================
+   3. GAME STYLES (The Typing Engine)
+   ========================================= */
 
-p{
-  margin-top: 20px;
-   font-size: 14px;
-    color: #555;
+/* Use this class on the body when the game is active */
+body.game-mode {
+  background-color: #323437;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.game-container {
+  max-width: 900px;
+  margin: 0 auto;
+  cursor: text;
+  text-align: left;
+}
+
+.timer {
+  color: #e2b714;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.word-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 24px;
+  line-height: 1.5;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.word {
+  position: relative;
+  color: #646669; /* Untyped words */
+}
+
+/* Character states */
+.char.correct { color: #d1d0c5; } /* Off-white */
+.char.wrong   { color: #ca4754; } /* Red */
+.char.past    { color: #d1d0c5; }
+
+/* Mechanics */
+.hidden-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.caret {
+  position: absolute;
+  width: 2px;
+  height: 1.2em;
+  background-color: #e2b714;
+  left: 0;
+  top: 0.15em;
+  animation: blink 1s infinite;
+  transition: left 0.1s ease;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
