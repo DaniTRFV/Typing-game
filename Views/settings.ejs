@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Account Settings</title>
+</head>
+<body class="game-mode">
+    <div class="container login">
+        <form action="/update-account" method="POST">
+            <h1 class="form-title">Account Settings</h1>
+            
+            <% if (locals.error) { %><p style="color: #ca4754;"><%= error %></p><% } %>
+            <% if (locals.success) { %><p style="color: #47ca54;"><%= success %></p><% } %>
+
+            <label class="label">Username</label>
+            <input type="password" name="username" class="input" value="<%= user.username %>" required>
+
+            <label class="label">New Password</label>
+            <input type="text" name="password" class="input" placeholder="Leave blank to stay the same">
+
+            <button type="submit" class="submit-button">Save Changes</button>
+            <p><a href="/game" style="color: #5563DE; text-decoration: none;">← Back to Game</a></p>
+        </form>
+    </div>
+</body>
+</html>

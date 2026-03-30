@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game - ELITE TROLL EDITION</title>
+    
+    <link rel="stylesheet" href="/style.css?v=666">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body class="game-mode">
+
+    <div class="account-menu">
+        <div class="profile-circle" onclick="document.getElementById('dropdown').classList.toggle('show')">
+            <%= username.charAt(0).toUpperCase() %>
+        </div>
+        <div id="dropdown" class="dropdown-content">
+            <div class="dropdown-header">Logged in as: <strong><%= username %></strong></div>
+            <hr style="border: 0.5px solid #444; margin: 5px 0;">
+            <a href="/settings">Settings</a>
+            <a href="/logout" style="color: #ca4754; font-weight: bold;">Logout</a>
+        </div>
+    </div>
+
+    <div id="root"></div>
+
+    <script type="text/babel" src="/game.js?v=final_boss"></script>
+
+    <script>
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-circle')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
